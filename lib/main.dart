@@ -71,6 +71,7 @@ class HomeScreen extends StatelessWidget {
               const SizedBox(height: 60),
               ElevatedButton.icon(
                 onPressed: () {
+                  // هنضيف شاشة الإعدادات قريب
                   ScaffoldMessenger.of(context).showSnackBar(
                     const SnackBar(
                       content: Text('جاري التطوير... قريباً 🚀'),
