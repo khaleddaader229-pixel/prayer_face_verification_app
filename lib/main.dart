@@ -147,6 +147,119 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+}    return Scaffold(
+      appBar: AppBar(
+        title: const Text('🕌 صلِّ قبل ما يفوتك'),
+        centerTitle: true,
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
+      ),
+      body: Center(
+        child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.mosque,
+                size: 80,
+                color: Colors.green,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'مرحباً بك في تطبيق',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                'صلِّ قبل ما يفوتك',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                'سيتم تذكيرك بمواقيت الصلاة',
+                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
+              ),
+              const Text(
+                'ولن يتوقف التنبيه إلا بعد التحقق بالوجه',
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 60),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.settings),
+                    label: const Text('الإعدادات'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 15,
+                      ),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const PrayerTimesScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.mosque),
+                    label: const Text('مواقيت الصلاة'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 15,
+                      ),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                  ),
+                  const SizedBox(width: 10),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const FaceVerificationScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.face),
+                    label: const Text('التحقق'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 20,
+                        vertical: 15,
+                      ),
+                      textStyle: const TextStyle(fontSize: 14),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
 }
 import 'package:app/services/notification_service.dart';
 import 'package:app/services/prayer_service.dart';
