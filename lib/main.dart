@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/screens/settings_screen.dart';
+import 'package:app/screens/prayer_times_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -59,6 +60,68 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 40),
+              const Text(
+                'سيتم تذكيرك بمواقيت الصلاة',
+                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
+              ),
+              const Text(
+                'ولن يتوقف التنبيه إلا بعد التحقق بالوجه',
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 60),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.settings),
+                    label: const Text('الإعدادات'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 15,
+                      ),
+                      textStyle: const TextStyle(fontSize: 16),
+                    ),
+                  ),
+                  const SizedBox(width: 20),
+                  ElevatedButton.icon(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const PrayerTimesScreen()),
+                      );
+                    },
+                    icon: const Icon(Icons.mosque),
+                    label: const Text('مواقيت الصلاة'),
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.green,
+                      foregroundColor: Colors.white,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 30,
+                        vertical: 15,
+                      ),
+                      textStyle: const TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}              const SizedBox(height: 40),
               const Text(
                 'سيتم تذكيرك بمواقيت الصلاة',
                 style: TextStyle(fontSize: 18),
