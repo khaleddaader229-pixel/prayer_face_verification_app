@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:app/screens/settings_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,6 +36,66 @@ class HomeScreen extends StatelessWidget {
       ),
       body: Center(
         child: Padding(
+          padding: const EdgeInsets.all(24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Icon(
+                Icons.mosque,
+                size: 80,
+                color: Colors.green,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                'مرحباً بك في تطبيق',
+                style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              ),
+              const Text(
+                'صلِّ قبل ما يفوتك',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.green,
+                ),
+              ),
+              const SizedBox(height: 40),
+              const Text(
+                'سيتم تذكيرك بمواقيت الصلاة',
+                style: TextStyle(fontSize: 18),
+                textAlign: TextAlign.center,
+              ),
+              const Text(
+                'ولن يتوقف التنبيه إلا بعد التحقق بالوجه',
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 60),
+              ElevatedButton.icon(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => const SettingsScreen()),
+                  );
+                },
+                icon: const Icon(Icons.settings),
+                label: const Text('ابدأ الإعداد'),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  foregroundColor: Colors.white,
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 40,
+                    vertical: 15,
+                  ),
+                  textStyle: const TextStyle(fontSize: 18),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}        child: Padding(
           padding: const EdgeInsets.all(24.0),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
